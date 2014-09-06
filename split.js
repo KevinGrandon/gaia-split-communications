@@ -61,8 +61,28 @@ var steps = [
 	},
 
 	function() {
-		console.log('Remove old style, icon folders.');
-		exec('cd ' + commsAppDir + ' && rm -rf style && rm manifest.webapp', next);
+		console.log('Move facebook scripts into contacts.');
+		exec('mv ' + commsAppDir + '/facebook ' + newContactsAppDir + '/facebook', next);
+	},
+
+	function() {
+		console.log('Move test media into contacts.');
+		exec('mv ' + commsAppDir + '/test/unit/media ' + newContactsAppDir + '/test/unit/media', next);
+	},
+
+	function() {
+		console.log('Copy unit test setup.js into dialer.');
+		exec('cp ' + commsAppDir + '/test/unit/setup.js ' + newContactsAppDir + '/test/unit/setup.js', next);
+	},
+
+	function() {
+		console.log('Copy unit test setup.js into contacts.');
+		exec('cp ' + commsAppDir + '/test/unit/setup.js ' + newDialerAppDir + '/test/unit/setup.js', next);
+	},
+
+	function() {
+		console.log('Remove old folders.');
+		exec('cd ' + commsAppDir + ' && rm -rf style/ manifest.webapp contacts/ dialer/ test/', next);
 	}
 ];
 
