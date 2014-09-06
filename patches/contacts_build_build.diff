@@ -1,0 +1,13 @@
+diff --git a/apps/contacts/build/build.js b/apps/contacts/build/build.js
+index 51d6667..dcade70 100644
+--- a/apps/contacts/build/build.js
++++ b/apps/contacts/build/build.js
+@@ -34,7 +34,7 @@ CommAppBuilder.prototype.generateManifest = function() {
+ CommAppBuilder.prototype.generateAll = function() {
+   this.generateManifest();
+ 
+-  importBuild.generateConfig('communications', 'contacts', this.gaia);
++  importBuild.generateConfig('communications', this.gaia);
+ };
+ 
+ CommAppBuilder.prototype.execute = function(options) {

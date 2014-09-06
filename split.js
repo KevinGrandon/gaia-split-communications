@@ -102,8 +102,18 @@ var steps = [
 	},
 
 	function() {
+		console.log('Applying import config patch.');
+		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_import_config.diff', next);
+	},
+
+	function() {
+		console.log('Applying contacts build patch.');
+		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/contacts_build_build.diff', next);
+	},
+
+	function() {
 		console.log('Remove old folders.');
-		exec('cd ' + commsAppDir + ' && rm -rf style/ manifest.webapp contacts/ dialer/ test/', next);
+		exec('cd ' + commsAppDir + ' && rm -rf style/ manifest.webapp contacts/ dialer/ test/ jsdoc.json', next);
 	}
 ];
 
