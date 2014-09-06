@@ -1,6 +1,7 @@
 var exec = require('child_process').exec;
 var jsdoc = require('./lib/jsdoc');
 var manifest = require('./lib/manifest');
+var pathFixer = require('./lib/path_fixer');
 
 var gaiaDir = __dirname + '/../gaia';
 var appsDir = gaiaDir + '/apps';
@@ -99,6 +100,16 @@ var steps = [
 	function() {
 		console.log('Copy unit test setup.js into contacts.');
 		exec('cp ' + commsAppDir + '/test/unit/setup.js ' + newDialerAppDir + '/test/unit/setup.js', next);
+	},
+
+	function() {
+		console.log('Fixing loads of paths..');
+		pathFixer.updateHtmlScripts(newContactsAppDir, 'contacts');
+		pathFixer.updateHtmlScripts(newDialerAppDir, 'dialer');
+
+		pathFixer.updateHtmlLinks(newContactsAppDir, 'contacts');
+		pathFixer.updateHtmlLinks(newDialerAppDir, 'dialer');
+		next();
 	},
 
 	function() {
