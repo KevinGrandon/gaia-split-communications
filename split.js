@@ -1,4 +1,6 @@
 var exec = require('child_process').exec;
+
+var homescreen = require('./lib/homescreen');
 var jsdoc = require('./lib/jsdoc');
 var manifest = require('./lib/manifest');
 var pathFixer = require('./lib/path_fixer');
@@ -85,6 +87,11 @@ var steps = [
 	function() {
 		console.log('Move facebook scripts into contacts.');
 		exec('mv ' + commsAppDir + '/facebook ' + newContactsAppDir + '/facebook', next);
+	},
+
+	function() {
+		console.log('Augment homescreen placement definition.');
+		homescreen.processPlacement(gaiaDir, next);
 	},
 
 	function() {
