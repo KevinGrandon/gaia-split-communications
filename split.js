@@ -53,6 +53,16 @@ var steps = [
 	function() {
 		console.log('Augment manifest for dialer.');
 		manifest.processDialer(newDialerAppDir + '/manifest.webapp', next);
+	},
+
+	function() {
+		console.log('Move build scripts into contacts.');
+		exec('mv ' + commsAppDir + '/build ' + newContactsAppDir + '/build', next);
+	},
+
+	function() {
+		console.log('Remove old style, icon folders.');
+		exec('cd ' + commsAppDir + ' && rm -rf style && rm manifest.webapp', next);
 	}
 ];
 
