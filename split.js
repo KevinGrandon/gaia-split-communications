@@ -122,6 +122,7 @@ var steps = [
 		pathFixer.updateScriptPaths(newDialerAppDir, 'dialer');
 
 		linterxfail.processJshintXfail(gaiaDir);
+		linterxfail.processCsslintXfail(gaiaDir);
 
 		next();
 	},
