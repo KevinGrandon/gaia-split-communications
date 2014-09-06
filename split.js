@@ -109,6 +109,9 @@ var steps = [
 
 		pathFixer.updateHtmlLinks(newContactsAppDir, 'contacts');
 		pathFixer.updateHtmlLinks(newDialerAppDir, 'dialer');
+
+		pathFixer.updateScriptPaths(newContactsAppDir, 'contacts');
+		pathFixer.updateScriptPaths(newDialerAppDir, 'dialer');
 		next();
 	},
 
