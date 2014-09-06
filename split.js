@@ -107,6 +107,11 @@ var steps = [
 	},
 
 	function() {
+		console.log('Applying build app list.');
+		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_production_app_list.diff', next);
+	},
+
+	function() {
 		console.log('Applying contacts build patch.');
 		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/contacts_build_build.diff', next);
 	},
