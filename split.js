@@ -103,7 +103,7 @@ var steps = [
 	},
 
 	function() {
-		console.log('Fixing loads of paths..');
+		console.log('Fixing loads of paths...');
 		pathFixer.updateHtmlScripts(newContactsAppDir, 'contacts');
 		pathFixer.updateHtmlScripts(newDialerAppDir, 'dialer');
 
