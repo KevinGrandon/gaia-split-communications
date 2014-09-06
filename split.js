@@ -2,6 +2,7 @@ var exec = require('child_process').exec;
 
 var homescreen = require('./lib/homescreen');
 var jsdoc = require('./lib/jsdoc');
+var linterxfail = require('./lib/linterxfail');
 var manifest = require('./lib/manifest');
 var pathFixer = require('./lib/path_fixer');
 
@@ -119,6 +120,9 @@ var steps = [
 
 		pathFixer.updateScriptPaths(newContactsAppDir, 'contacts');
 		pathFixer.updateScriptPaths(newDialerAppDir, 'dialer');
+
+		linterxfail.processJshintXfail(gaiaDir);
+
 		next();
 	},
 
