@@ -1,0 +1,13 @@
+diff --git a/apps/ftu/build/build.js b/apps/ftu/build/build.js
+index b31d167..80ea06e 100644
+--- a/apps/ftu/build/build.js
++++ b/apps/ftu/build/build.js
+@@ -34,7 +34,7 @@ FtuAppBuilder.prototype.generateManifest = function() {
+ FtuAppBuilder.prototype.generateAll = function() {
+   this.generateManifest();
+ 
+-  importBuild.generateConfig('ftu', '/', this.gaia);
++  importBuild.generateConfig('ftu', this.gaia);
+ };
+ 
+ FtuAppBuilder.prototype.execute = function(options) {

@@ -113,8 +113,13 @@ var steps = [
 	},
 
 	function() {
-		console.log('Applying import config patch.');
+		console.log('Applying import config patch to contacts.');
 		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_import_config.diff', next);
+	},
+
+	function() {
+		console.log('Applying import config patch to ftu.');
+		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_ftu_generate_config.diff', next);
 	},
 
 	function() {
