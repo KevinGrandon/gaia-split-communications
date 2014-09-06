@@ -1,4 +1,5 @@
 var exec = require('child_process').exec;
+var jsdoc = require('./lib/jsdoc');
 var manifest = require('./lib/manifest');
 
 var gaiaDir = __dirname + '/../gaia';
@@ -53,6 +54,26 @@ var steps = [
 	function() {
 		console.log('Augment manifest for dialer.');
 		manifest.processDialer(newDialerAppDir + '/manifest.webapp', next);
+	},
+
+	function() {
+		console.log('Copy jsdoc for contacts.');
+		exec('cp ' + commsAppDir + '/jsdoc.json ' + newContactsAppDir + '/jsdoc.json', next);
+	},
+
+	function() {
+		console.log('Augment jsdoc for contacts.');
+		jsdoc.processContacts(newContactsAppDir + '/jsdoc.json', next);
+	},
+
+	function() {
+		console.log('Copy jsdoc for dialer.');
+		exec('cp ' + commsAppDir + '/jsdoc.json ' + newDialerAppDir + '/jsdoc.json', next);
+	},
+
+	function() {
+		console.log('Augment jsdoc for dialer.');
+		jsdoc.processDialer(newDialerAppDir + '/jsdoc.json', next);
 	},
 
 	function() {
