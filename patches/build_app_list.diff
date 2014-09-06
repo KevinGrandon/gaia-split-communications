@@ -1,0 +1,54 @@
+diff --git a/build/config/phone/apps-production.list b/build/config/phone/apps-production.list
+index 6e6e2e6..0cd2d7f 100644
+--- a/build/config/phone/apps-production.list
++++ b/build/config/phone/apps-production.list
+@@ -6,8 +6,9 @@ apps/callscreen
+ apps/camera
+ apps/clock
+ apps/collection
+-apps/communications
++apps/contacts
+ apps/costcontrol
++apps/dialer
+ apps/email
+ apps/emergency-call
+ apps/findmydevice
+diff --git a/build/config/tablet/apps-engineering.list b/build/config/tablet/apps-engineering.list
+index 7174809..88dbc62 100644
+--- a/build/config/tablet/apps-engineering.list
++++ b/build/config/tablet/apps-engineering.list
+@@ -4,7 +4,7 @@ apps/browser
+ apps/calendar
+ apps/camera
+ apps/clock
+-apps/communications
++apps/contacts
+ apps/email
+ apps/fl
+ apps/ftu
+diff --git a/build/config/tablet/apps-production.list b/build/config/tablet/apps-production.list
+index 7174809..88dbc62 100644
+--- a/build/config/tablet/apps-production.list
++++ b/build/config/tablet/apps-production.list
+@@ -4,7 +4,7 @@ apps/browser
+ apps/calendar
+ apps/camera
+ apps/clock
+-apps/communications
++apps/contacts
+ apps/email
+ apps/fl
+ apps/ftu
+diff --git a/build/config/tv/apps-engineering.list b/build/config/tv/apps-engineering.list
+index 056f4d8..6d464be 100644
+--- a/build/config/tv/apps-engineering.list
++++ b/build/config/tv/apps-engineering.list
+@@ -6,7 +6,7 @@ apps/browser
+ apps/calendar
+ apps/camera
+ apps/clock
+-apps/communications
++apps/contacts
+ apps/email
+ apps/fl
+ apps/gallery

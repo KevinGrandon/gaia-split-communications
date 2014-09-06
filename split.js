@@ -138,8 +138,8 @@ var steps = [
 	},
 
 	function() {
-		console.log('Applying build app list.');
-		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_production_app_list.diff', next);
+		console.log('Applying build app list patches.');
+		exec('cd ' + gaiaDir + ' && patch -p1 < ' + __dirname + '/patches/build_app_list.diff', next);
 	},
 
 	function() {
